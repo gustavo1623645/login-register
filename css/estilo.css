@@ -1,0 +1,154 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+   
+    background-repeat: no-repeat;
+    background-size: cover; /*sirve para que la imagen se adapte y ocupe todo el contenedor aunque la imagen se desborda*/
+    background-position: center; /*centra la imagen de manera que si se desborda la centre y quede mejor aunque quedaran espacion en blanco*/
+    background-attachment: fixed;/* adapta la imagen para quenocupe los espacios en blanco*/
+    background-color:beige;
+    
+}
+
+/*el main contiene al contenedor principal*/
+main{
+    width: 100%;
+    padding:20px ;
+    margin:auto ; /*para que siemore este centrado*/
+    margin-top: 100px ; /*para que no este muy pegado en la parte de arriba*/
+}
+.contenedor__principal{
+    
+    width: 100%; /* su anchura es del 100% respecto a su contenedor padre*/
+    max-width: 800px;
+    margin: auto;/*para que siwmpre este centrado*/
+    position: relative;
+
+}
+.caja__trasera{
+    width:100%;
+    
+    display: flex;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 128, 255, 0.5);
+    
+}
+.caja__trasera div{    
+margin: 100px 40px;
+color: white;
+transition: 500ms;
+}
+.caja__trasera div p,
+.caja__trasera div button{
+    margin-top: 50px;  /*accede a los div de caja trasera a los p u botones*/
+
+}
+.caja__trasera div h3{
+    font-weight: 400;/*controla el grosor de la letra*/
+    font-size:26px; /*tamaño de letra*/
+    
+}
+.caja__trasera button{
+    padding: 10px 40px;
+    border:2px solid white;
+    background:transparent;
+    color: white;
+    cursor:pointer;
+    font-weight: 600;
+    font-size: 14px;
+    outline:none ;
+    transition:all 300ms;
+}
+.caja__trasera button:hover {
+    background-color: white  ;
+color:#42a2fd
+}
+.caja__login-register{
+    display: flex;
+    align-items: center; /*alinea segun su contendor que es logon register*/
+    width:100%;
+    max-width: 380px; /*para que el ancho sea de esa madida*/
+    position: relative; /*cambia de posicion pero contando desde su contenedor que tiene la propiedad absolute en este caso form*/
+    
+    top: -185px;
+    left: 10px;
+    transition:500ms
+    
+    
+}
+.caja__login-register form{
+    
+    width: 100%;
+    padding:80px 20px;
+    background-color: white;
+    position: absolute;/*para que lo podamos mover*/
+    border-radius: 20px;
+
+}
+.caja__login-register form h2{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #42a2fd;
+}
+.caja__login-register form input{
+     width: 100%;/*el tamaño de los imputs sera del 100% deacuerdo a su caja contenedora*/
+     margin-top: 20px;
+     padding:10px;
+     border:none;
+     background-color:#f2f2f2;
+     font-size: 16px;
+     outline: none;
+}
+.caja__login-register form button{
+    margin-top:40px ;
+    padding:10px 40px ;
+    font-size: 14px;
+    border: none;
+    background-color:#42a2fd ;
+    color:white ;
+    outline: none;
+    cursor: pointer;
+}
+/*para hacer que aparesca el formulario que esta oculto*/
+.formulario__login{
+opacity: 1;
+display: block;
+}
+
+.formulario__registrar{
+    display:none;/*el formulario registrar se oculta y cuando se pone block aparece de esta forma se ca,biara de un formulari0o na otro
+    desde javascript*/
+}
+/*---------------------------------------------------------------------------------------------------------*/
+.mostar{
+    display:block;
+    
+}
+/*----------------------------------------------------------------------------------------------------------*/
+
+/*RESPONSIVE DESIGN*/
+
+@media screen  and(max-width:850px){
+/*main{
+    margin-top:50px ;/*la caja main se bajara 50px*/
+
+/*}*/
+.caja__trasera{
+    max-width: 350px;         /* su tamaño original es de 800 pero cuando la pantalla tenga menos de 850px ahora 
+                              la caja trasera sera de 350 px*/
+    height: 300px;
+    flex-direction: column;            
+}
+.caja__trasera div{
+    margin:0;
+    position: absolute;
+}
+    
+}
